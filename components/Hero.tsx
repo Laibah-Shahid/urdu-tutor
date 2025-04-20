@@ -4,13 +4,13 @@ import React from 'react';
 const Hero = () => {
   return (
     <section
-      id="hero"
-      className="relative w-full h-96 overflow-hidden flex items-center justify-center text-center bg-cover bg-center"
-      style={{ backgroundImage: `url('/hero-image.png')` }}
-    >
+  id="hero"
+  className="relative w-full h-screen overflow-hidden flex items-center justify-center text-center bg-cover bg-center pt-32"
+  style={{ backgroundImage: `url('/hero-image.png')` }}
+>
       <div className="absolute w-full h-full bg-black opacity-50" />
       <div className="relative z-10 text-white px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow text-blue-800">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow text-white">
           بچوں کی اردو دنیا 
         </h1>
         <p className="text-lg md:text-xl max-w-xl mx-auto drop-shadow">
