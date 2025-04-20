@@ -1,4 +1,6 @@
 import React from 'react';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+
 
 const features = [
   {
@@ -29,7 +31,16 @@ const Features = () => {
               <h3 className="text-xl font-semibold mb-2 text-indigo-700">{feature.title}</h3>
               <p className="text-gray-600 mb-4">{feature.description}</p>
             </div>
-            <a href={feature.path} className="mt-auto w-24 inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Explore</a>
+              <a
+              href={index === 0 ? '/Conversation'
+                : index === 1
+                ? '/ReadStory'
+                : '/Speaking'}
+              className="flex items-center justify-center  mt-4 w-28 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Explore 
+              <ArrowRightIcon className="h-4 w-4 text-white inline-block ml-2" />
+            </a>
           </div>
         ))}
       </div>
@@ -38,3 +49,5 @@ const Features = () => {
 };
 
 export default Features;
+
+
