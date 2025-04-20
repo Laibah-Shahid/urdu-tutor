@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link';
+
 import Image from 'next/image';
 import { BookOpenIcon, EyeIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
@@ -8,24 +12,28 @@ const stories = [
     image: '/stories/fox.jpg',
     rating: 4.5,
     views: 1200,
+    link: '/ReadStory/Story1',
   },
   {
     name: 'خرگوش اور کچھوا',
     image: '/stories/rabbit-turtle.jpg',
     rating: 4.8,
     views: 1500,
+    link: '/ReadStory/Story2',
   },
   {
     name: 'شیردل بادشاہ',
     image: '/stories/king.jpg',
-    rating: 4.2,
+    rating: 4.1,
     views: 980,
+    link: '/ReadStory/Story3',
   },
   {
     name: 'پیارا سا ہاتھی',
     image: '/stories/elephant.jpg',
     rating: 4.6,
     views: 1100,
+    link: '/ReadStory/Story4',
   },
 ];
 
@@ -42,6 +50,7 @@ export default function StoryPage() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
         {stories.map((story, index) => (
+            <Link key={index} href={story.link}>
           <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all">
             <Image
               src={story.image}
@@ -69,8 +78,10 @@ export default function StoryPage() {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
+    
   );
 }
